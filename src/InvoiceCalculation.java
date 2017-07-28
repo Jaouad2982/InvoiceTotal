@@ -18,15 +18,16 @@ public class InvoiceCalculation {
 		int option;
 		double sum = 0;
 		String priceString = " ";
-		List<Product> basket = new ArrayList<Product>();// the arrayList contains the object Product.
-		Product product;					 
+		List<Product> basket = new ArrayList<Product>();// the arrayList
+		Product product; // contains the object
+		// Product.
 
 		do {// a do while which allow the user to run the program as long as his
 			// input is repeat. it run at least once.
 			System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
 			System.out.println("Press 1 to add an item to the basket");
 			System.out.println("Press 2 to display the list of items in the basket and their prices");
-			System.out.println("Press 3 to display the total price including tax");
+			System.out.println("Press 3 to display the total price including tax pl");
 			option = input.nextInt();
 
 			product = new Product();// call the construction..
@@ -36,10 +37,10 @@ public class InvoiceCalculation {
 						"ooooooooooooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMoooooooooooooooooooooooooooooooo");
 				System.out.println("What is the name of the product ?");
 				String newProductDesc = input.nextLine();
-				product.setProductDesc(newProductDesc); // set the productDesc using the the set method called  setProductDesc
-														
-														
-														
+				product.setProductDesc(newProductDesc); // set the productDesc
+														// using the the set
+														// method called
+														// setProductDesc
 				input.nextLine();
 				System.out.println("What is the product's price ?");
 				double newPrice = input.nextDouble();
@@ -53,7 +54,9 @@ public class InvoiceCalculation {
 				System.out.println(
 						"-------------------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------");
 				for (int i = 0; i < basket.size(); i++) {
-					System.out.println(" product " + (i + 1) + " ----> " + "$" + basket.get(i).getPrice());
+					System.out.println("|------------------------------|------------------------------------|");
+					System.out.println("| product " + (i + 1) + " ---->| " + "$" + basket.get(i).getPrice());
+					System.out.println("|------------------------------|-------------------------------------|");
 				}
 
 			} else if (option == 3) { // option 3
@@ -72,13 +75,19 @@ public class InvoiceCalculation {
 				System.out.println("The total price is " + "_______" + (finalAmount) + "_______");// applying
 																									// the
 																									// taxRate
-																									// to
-
-				// to the total amount
+																									//to the total amount
+				
 				System.out.println("The total price at two decimal places is "
 						+ Double.parseDouble(String.format("%.2f", finalAmount)));
 				System.out.println(
 						"_________________________________________________________________________________________");
+				for (int i = 0; i < basket.size(); i++) {
+					System.out.println("|-------------------------|");
+					System.out.println("| product " + (i + 1) + " ---->" + "$" + basket.get(i).getPrice());
+					System.out.println("|-------------------------|");
+				}
+				System.out.println("|Final amount" + "---> " + Double.parseDouble(String.format("%.2f", finalAmount)));
+				System.out.println("|-------------------------|");
 
 			}
 
