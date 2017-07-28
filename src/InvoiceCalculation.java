@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////////////////
+// Author:           (Jaouad Sarouti )                                       //
+// Lecturer's Name:  (name of your lecturer)				     //
+// Date :     		  (07/28/2017)					     //
+// 									     //								 //	
+///////////////////////////////////////////////////////////////////////////////
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
