@@ -18,9 +18,8 @@ public class InvoiceCalculation {
 		int option;
 		double sum = 0;
 		String priceString = " ";
-		List<Product> basket = new ArrayList<Product>();// the arrayList
-		Product product;									// contains the object
-													// Product.
+		List<Product> basket = new ArrayList<Product>();// the arrayList contains the object Product.
+		Product product;					 
 
 		do {// a do while which allow the user to run the program as long as his
 			// input is repeat. it run at least once.
@@ -37,10 +36,10 @@ public class InvoiceCalculation {
 						"ooooooooooooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMoooooooooooooooooooooooooooooooo");
 				System.out.println("What is the name of the product ?");
 				String newProductDesc = input.nextLine();
-				product.setProductDesc(newProductDesc); // set the productDesc
-														// using the the set
-														// method called
-														// setProductDesc
+				product.setProductDesc(newProductDesc); // set the productDesc using the the set method called  setProductDesc
+														
+														
+														
 				input.nextLine();
 				System.out.println("What is the product's price ?");
 				double newPrice = input.nextDouble();
