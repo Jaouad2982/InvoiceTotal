@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class InvoiceCalculation {
 	private static Scanner input = new Scanner(System.in);
 
@@ -10,37 +12,38 @@ public class InvoiceCalculation {
 		int option;
 		double sum = 0;
 
-		List<Product> basket = new ArrayList<Product>();
+		List<Product> basket = new ArrayList<Product>();// the arrayList contains the object Product.
 
-		do {
+		do {// a do while which allow the user to run the program as long as his input is repeat. it run at least once.
 			System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
 			System.out.println("Press 1 to add an item to the basket");
 			System.out.println("Press 2 to display the list of items in the basket and their prices");
 			System.out.println("Press 3 to display the total price including tax");
 			option = input.nextInt();
 
-			Product product = new Product();
-			if (option == 1) {
+			Product product = new Product();// call the construction..
+			
+			if (option == 1) { // option 1
 				System.out.println(
 						"ooooooooooooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMoooooooooooooooooooooooooooooooo");
 				System.out.println("What is the name of the product ?");
 				String newProductDesc = input.nextLine();
-				product.setProductDesc(newProductDesc);
+				product.setProductDesc(newProductDesc); // set the productDesc using the the setmethod called setProductDesc
 				input.nextLine();
 				System.out.println("What is the product's price ?");
 				double newPrice = input.nextDouble();
-				product.setPrice(newPrice);
+				product.setPrice(newPrice);// set the price using the setmethod in the Product class
 
 				basket.add(product);
 
-			} else if (option == 2) {
+			} else if (option == 2) {// option two
 				System.out.println(
 						"-------------------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------");
 				for (int i = 0; i < basket.size(); i++) {
 					System.out.println(" product " + (i + 1) + " ----> " + basket.get(i).getPrice() +"$");
 				}				
 				
-			} else if (option == 3) {
+			} else if (option == 3) { // option 3
 				System.out.println(
 						"--------------------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------");
 				System.out.println("What is the tax rate to be applied to your basket ? ");
@@ -48,14 +51,15 @@ public class InvoiceCalculation {
 				for (int i = 0; i < basket.size(); i++) {
 					sum = sum + basket.get(i).getPrice();
 				}
-				double rate = sum * (taxRate / 100);
+				double rate = sum * (taxRate / 100); // calculation of taxRate
 
-				System.out.println("The total price is " + "_______"+(sum + rate)+"_______");
+				System.out.println("The total price is " + "_______"+(sum + rate)+"_______");// applying the taxRate to 
+													     // to the total amount
 				System.out.println("_________________________________________________________________________________________");
 			}
 
 			System.out.println("Would you like to continue to add, check your list or output your total price, Press 'yes'?");
-			repeat = input.next();
+			repeat = input.next(); // prompt the user to continue in order to see or choose the other options
 		} while (repeat.equalsIgnoreCase("yes"));
 
 	}
